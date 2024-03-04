@@ -1,6 +1,17 @@
-/*dodane do implementacji guzikow*/
-function playGame(){
+document.getElementById('play-rock').addEventListener('click', function(){
+    playGame(1);
+  });
 
+  document.getElementById('play-paper').addEventListener('click', function(){
+    playGame(2);
+  });
+  
+  document.getElementById('play-scissors').addEventListener('click', function(){
+    playGame(3);
+  });
+
+/*dodane do implementacji guzikow*/
+function playGame(playerInput){
     /* funkcja argMoveId -> getMoveName */
 
     function getMoveName(argMoveId){
@@ -25,16 +36,16 @@ function playGame(){
 
     /* pobranie ruchu gracza */
 
-    let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-    console.log('Gracz wpisał: ' + playerInput);
-    let argPlayerMove = playerInput;
+    /* let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+    console.log('Gracz wpisał: ' + playerInput);*/
+    let  argPlayerMove = playerInput
     printMessage('Twój ruch bratku to: ' + getMoveName(argPlayerMove));
 
     /* sprawdzenie w konsoli */
     console.log('moves:', argComputerMove, argPlayerMove);
 
     function displayResult(argComputerMove, argPlayerMove){
-        printMessage('Zagrałem '+ argComputerMove + 'a Ty ' + argPlayerMove);
+        printMessage('Zagrałem '+ argComputerMove + ' a Ty ' + argPlayerMove);
 
         if(argPlayerMove == argComputerMove){
             printMessage('Remis');
@@ -52,4 +63,5 @@ function playGame(){
             printMessage('Komputer wygrywa');
         }
     }
+    displayResult()
 }
