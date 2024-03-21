@@ -13,7 +13,7 @@ document.getElementById('play-rock').addEventListener('click', function(){
 /*dodane do implementacji guzikow*/
 function playGame(playerInput){
     /* funkcja argMoveId -> getMoveName */
-
+    clearMessages();
     function getMoveName(argMoveId){
         if(argMoveId == 1){
         return 'kamień';
