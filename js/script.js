@@ -44,24 +44,19 @@ function playGame(playerInput){
     /* sprawdzenie w konsoli */
     console.log('moves:', argComputerMove, argPlayerMove);
 
-    function displayResult(argComputerMove, argPlayerMove){
-        printMessage('Zagrałem '+ argComputerMove + ' a Ty ' + argPlayerMove);
+    function displayResult(computerMove, playerMove) {
+        printMessage('Zagrałem ' + computerMove + ', a Ty ' + playerMove);
 
-        if(argPlayerMove == argComputerMove){
+        if (playerMove === computerMove) {
             printMessage('Remis');
-        } else if(argPlayerMove == 1 && argComputerMove == 3){
+        } else if ((playerMove === 1 && computerMove === 3) ||
+                   (playerMove === 2 && computerMove === 1) ||
+                   (playerMove === 3 && computerMove === 2)) {
             printMessage('Ty wygrywasz!');
-        } else if(argPlayerMove == 1 && argComputerMove == 2){
-            printMessage('Komputer wygrywa');
-        } else if(argPlayerMove == 2 && argComputerMove == 1){
-            printMessage('Ty wygrywasz!');
-        } else if(argPlayerMove == 2 && argComputerMove == 3){
-            printMessage('Komputer wygrywa');
-        } else if(argPlayerMove == 3 && argComputerMove == 2){
-            printMessage('Ty wygrywasz!');
-        } else if(argPlayerMove == 3 && argComputerMove == 1){
+        } else {
             printMessage('Komputer wygrywa');
         }
     }
-    displayResult()
+    
+    displayResult(getMoveName(argComputerMove), getMoveName(argPlayerMove));
 }
