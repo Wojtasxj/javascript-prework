@@ -1,15 +1,19 @@
 {
-    document.getElementById('play-rock').addEventListener('click', function(){
+    const playRock = () => {
         playGame(1);
-    });
+    };
     
-    document.getElementById('play-paper').addEventListener('click', function(){
+    const playPaper = () => {
         playGame(2);
-    });
+    };
     
-    document.getElementById('play-scissors').addEventListener('click', function(){
+    const playScissors = () => {
         playGame(3);
-    });
+    };
+    
+    document.getElementById('play-rock').addEventListener('click', playRock);
+    document.getElementById('play-paper').addEventListener('click', playPaper);
+    document.getElementById('play-scissors').addEventListener('click', playScissors);
     
     function playGame(playerMove){
         clearMessages();
