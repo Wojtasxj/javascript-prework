@@ -15,10 +15,10 @@
     document.getElementById('play-paper').addEventListener('click', playPaper);
     document.getElementById('play-scissors').addEventListener('click', playScissors);
     
-    var playGame = function(playerMove){
+    const playGame = function(playerMove){
         clearMessages();
     
-        var getMoveName = function(argMoveId){
+        const getMoveName = function(argMoveId){
             switch(argMoveId){
                 case 1:
                     return 'kamień';
@@ -34,7 +34,7 @@
     
         const randomNumber = Math.floor(Math.random() * 3 + 1);
     
-        var displayResult = function(randomNumber, playerMove) {
+        const displayResult = function(randomNumber, playerMove) {
             printMessage('Zagrałem ' + getMoveName(randomNumber) + ', a Ty ' + getMoveName(playerMove));
     
             if (playerMove === randomNumber) {
